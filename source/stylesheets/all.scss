@@ -151,7 +151,7 @@ small {
   background-color: white;
   margin: 20px auto 400px;
   overflow: hidden;
-  padding: 40px;
+  padding: 70px 40px;
 }
 
 .screen.large {
@@ -163,10 +163,12 @@ small {
 
   .type.xsmall {
     @include large-screen;
+    padding: 70px 50px;
   }
 
   .type.small {
     @include large-screen;
+
   }
 
   .type.medium {
@@ -202,27 +204,32 @@ small {
 
   .type.xsmall {
     @include xlarge-screen;
-    padding:125px 300px;
+    @include font-size(18px);
+    padding:100px 255px;
   }
 
   .type.small {
     @include xlarge-screen;
-    padding:125px 270px;
+    @include font-size(21px);
+    padding:100px 225px;
   }
 
   .type.medium {
     @include xlarge-screen;
-    padding:125px 245px;
+    @include font-size(24px);
+    padding:100px 235px;
   }
 
   .type.large {
     @include xlarge-screen;
-    padding:125px 210px;
+    @include font-size(27px);
+    padding:100px 210px;
   }
 
   .type.xlarge {
     @include xlarge-screen;
-    padding:125px 170px;
+    @include font-size(30px);
+    padding:100px 130px;
   }
 }
 
