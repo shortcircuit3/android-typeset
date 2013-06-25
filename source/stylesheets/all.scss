@@ -114,6 +114,14 @@ small {
   margin: 20px auto 400px;
   overflow: hidden;
   padding: 20px;
+
+  p {
+    margin-top: 0;
+    height: 441px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border: 1px solid #ccc;
+  }
 }
 
 .screen.normal {
@@ -129,10 +137,16 @@ small {
 
   .type.small {
     @include normal-screen;
+    p {
+      height: 436px;
+    }
   }
 
   .type.medium {
     @include normal-screen;
+    p {
+      height: 438px;
+    }
   }
 
   .type.large {
@@ -152,6 +166,14 @@ small {
   margin: 20px auto 400px;
   overflow: hidden;
   padding: 70px 40px;
+
+  p {
+    margin-top: 0;
+    height: 655px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border: 1px solid #ccc;
+  }
 }
 
 .screen.large {
@@ -164,6 +186,10 @@ small {
   .type.xsmall {
     @include large-screen;
     padding: 70px 50px;
+
+    p {
+      height: 655px;
+    }
   }
 
   .type.small {
@@ -193,6 +219,14 @@ small {
   margin: 20px auto 400px;
   overflow: hidden;
   padding: 40px;
+
+  p {
+    margin-top: 0;
+    height: 572px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border: 1px solid #ccc;
+  }
 }
 
 .screen.xlarge {
@@ -212,6 +246,9 @@ small {
     @include xlarge-screen;
     @include font-size(21px);
     padding:100px 225px;
+    p {
+      height: 564px;
+    }
   }
 
   .type.medium {
@@ -224,12 +261,18 @@ small {
     @include xlarge-screen;
     @include font-size(27px);
     padding:100px 210px;
+    p {
+      height: 560px;
+    }
   }
 
   .type.xlarge {
     @include xlarge-screen;
     @include font-size(30px);
     padding:100px 130px;
+    p {
+      height: 550px;
+    }
   }
 }
 
