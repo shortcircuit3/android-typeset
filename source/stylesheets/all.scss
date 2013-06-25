@@ -202,22 +202,27 @@ small {
 
   .type.xsmall {
     @include xlarge-screen;
+    padding:125px 300px;
   }
 
   .type.small {
     @include xlarge-screen;
+    padding:125px 270px;
   }
 
   .type.medium {
     @include xlarge-screen;
+    padding:125px 245px;
   }
 
   .type.large {
     @include xlarge-screen;
+    padding:125px 210px;
   }
 
   .type.xlarge {
     @include xlarge-screen;
+    padding:125px 170px;
   }
 }
 
