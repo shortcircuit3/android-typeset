@@ -1,55 +1,162 @@
-@charset "utf-8";
+/* first for IE 4–8 */
+@font-face {
+  font-family: ScalaWebPro;
+  src: url("../fonts/ScalaWebPro.eot");
+}
 
-body {
-  background: #d4d4d4 url("../images/background.png");
-  text-align: center;
-  font-family: sans-serif; }
+/* then for WOFF-capable browsers */
+@font-face {
+  font-family: ScalaWebPro;
+  src: url("../fonts/ScalaWebPro.woff") format("woff");
+}
 
-h1 {
-  color: rgba(0, 0, 0, .3);
-  font-weight: bold;
-  font-size: 32px;
-  letter-spacing: -1px;
-  text-transform: uppercase;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
-  background: url("../images/middleman.png") no-repeat center 100px;
-  padding: 350px 0 10px;
-  margin: 0; }
+/* first for IE 4–8 */
+@font-face {
+  font-family: ScalaWebPro-Ita;
+  src: url("../fonts/ScalaWebPro-Ita.eot");
+}
 
-.doc {
-  font-size: 14px;
-  margin: 0; }
-  .doc:before,
-  .doc:after {
-    opacity: .2;
-    padding: 6px;
-    font-style: normal;
-    position: relative;
-    content: "•"; }
-  .doc a {
-    color: rgba(0, 0, 0, 0.3); }
-    .doc a:hover {
-      color: #666; }
+/* then for WOFF-capable browsers */
+@font-face {
+  font-family: ScalaWebPro-Ita;
+  src: url("../fonts/ScalaWebPro-Ita.woff") format("woff");
+}
 
-.welcome {
-  -webkit-animation-name: welcome;
-  -webkit-animation-duration: .9s; }
+/* first for IE 4–8 */
+@font-face {
+  font-family: ScalaSansScWebPro;
+  src: url("../fonts/ScalaSansScWebPro.eot");
+}
 
-@-webkit-keyframes welcome {
-  from {
-    -webkit-transform: scale(0);
-    opacity: 0;
+/* then for WOFF-capable browsers */
+@font-face {
+  font-family: ScalaSansScWebPro;
+  src: url("../fonts/ScalaSansScWebPro.woff") format("woff");
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  font-family: 'ScalaWebPro';
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin-bottom: 1.5em;
+}
+
+small {
+  color: #c9c9c9;
+  font-family: 'ScalaWebPro-Ita';
+  margin-bottom:2em;
+  display: inline-block;
+  font-size:12px;
+}
+
+.center {
+
+}
+
+// Type sizes
+
+.type {
+  margin:400px auto;
+
+  &.xsmall{
+    @include font-size(14px)
   }
-  50% {
-   -webkit-transform: scale(0);
-   opacity: 0;
+
+  &.small{
+    @include font-size(16px)
   }
-  82.5% {
-    -webkit-transform: scale(1.03);
-    -webkit-animation-timing-function: ease-out;
-    opacity: 1;
+
+  &.medium{
+    @include font-size(18px)
   }
-  to {
-    -webkit-transform: scale(1);
+
+  &.large{
+    @include font-size(21px)
+  }
+
+  &.xlarge{
+    @include font-size(24px)
   }
 }
+
+// Screen sizes
+@mixin breakpoint($width, $direction: min) {
+  @media only screen and (#{$direction}-width: $width) {
+    @content;
+  }
+}
+
+@mixin normal-and-up(){
+ @include breakpoint(320px) { @content }
+}
+
+@mixin large-and-up(){
+  @include breakpoint(480px) { @content }
+}
+
+@mixin xlarge-and-up(){
+  @include breakpoint(720px) { @content }
+}
+
+
+
+.screen.normal {
+  .type.xsmall {
+    @include normal-and-up{
+      max-width: 400px;
+    }
+  }
+
+  .type.small {
+    @include normal-and-up{
+      max-width: 450px;
+    }
+  }
+
+  .type.medium {
+    @include normal-and-up{
+      max-width: 550px;
+    }
+  }
+
+  .type.large {
+    @include normal-and-up{
+      max-width: 600px;
+    }
+  }
+
+  .type.xlarge {
+    @include normal-and-up{
+      max-width: 700px;
+    }
+  }
+}
+
+.screen.large {
+
+}
+
+.screen.xlarge {
+
+}
+
+
+
