@@ -39,6 +39,8 @@
   line-height: 1.5;
 }
 
+// Global styles
+
 * {
   box-sizing:border-box;
 }
@@ -46,35 +48,37 @@
 html {
   font-family: 'ScalaWebPro';
   -webkit-font-smoothing: antialiased;
+  background-color: #1c1c1c;
 }
 
 .wrap {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
+  margin-top:80px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   margin-bottom: 1.5em;
+  width: 320px;
+  margin:0 auto;
+  display: block;
+  color:#fff;
+}
+
+p {
+  margin-top: 0;
 }
 
 small {
-  color: #c9c9c9;
+  color: #808080;
   font-family: 'ScalaWebPro-Ita';
-  margin-bottom:2em;
-  display: inline-block;
+  display: block;
   font-size:12px;
 }
 
-.center {
-
-}
 
 // Type sizes
 
 .type {
-  margin:400px auto;
 
   &.xsmall{
     @include font-size(14px)
@@ -97,65 +101,124 @@ small {
   }
 }
 
-// Screen sizes
-@mixin breakpoint($width, $direction: min) {
-  @media only screen and (#{$direction}-width: $width) {
-    @content;
-  }
+// Screens
+.screen {
+  margin-top: 400px;
 }
 
-@mixin normal-and-up(){
- @include breakpoint(320px) { @content }
+// Normal screen
+@mixin normal-screen(){
+  width:320px;
+  height:480px;
+  background-color: white;
+  margin: 20px auto 400px;
+  overflow: hidden;
+  padding: 20px;
 }
-
-@mixin large-and-up(){
-  @include breakpoint(480px) { @content }
-}
-
-@mixin xlarge-and-up(){
-  @include breakpoint(720px) { @content }
-}
-
-
 
 .screen.normal {
+  small {
+    width: 320px;
+    margin:0 auto 2em;
+    display: block;
+  }
+
   .type.xsmall {
-    @include normal-and-up{
-      max-width: 400px;
-    }
+    @include normal-screen;
   }
 
   .type.small {
-    @include normal-and-up{
-      max-width: 450px;
-    }
+    @include normal-screen;
   }
 
   .type.medium {
-    @include normal-and-up{
-      max-width: 550px;
-    }
+    @include normal-screen;
   }
 
   .type.large {
-    @include normal-and-up{
-      max-width: 600px;
-    }
+    @include normal-screen;
   }
 
   .type.xlarge {
-    @include normal-and-up{
-      max-width: 700px;
-    }
+    @include normal-screen;
   }
 }
 
+// Large screen
+@mixin large-screen(){
+  width:480px;
+  height:800px;
+  background-color: white;
+  margin: 20px auto 400px;
+  overflow: hidden;
+  padding: 40px;
+}
+
 .screen.large {
+  small {
+    width: 480px;
+    margin:0 auto 2em;
+    display: block;
+  }
+
+  .type.xsmall {
+    @include large-screen;
+  }
+
+  .type.small {
+    @include large-screen;
+  }
+
+  .type.medium {
+    @include large-screen;
+  }
+
+  .type.large {
+    @include large-screen;
+  }
+
+  .type.xlarge {
+    @include large-screen;
+  }
 
 }
 
-.screen.xlarge {
+// Extra large screen
+@mixin xlarge-screen(){
+  width:1024px;
+  height:768px;
+  background-color: white;
+  margin: 20px auto 400px;
+  overflow: hidden;
+  padding: 40px;
+}
 
+.screen.xlarge {
+  small {
+    width: 1024px;
+    margin:0 auto 2em;
+    display: block;
+  }
+
+  .type.xsmall {
+    @include xlarge-screen;
+  }
+
+  .type.small {
+    @include xlarge-screen;
+  }
+
+  .type.medium {
+    @include xlarge-screen;
+  }
+
+  .type.large {
+    @include xlarge-screen;
+  }
+
+  .type.xlarge {
+    @include xlarge-screen;
+  }
 }
 
 
